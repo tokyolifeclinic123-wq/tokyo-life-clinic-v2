@@ -8,7 +8,7 @@ import { LineButton } from '@/components/ui/LineButton'
 const SLIDES = [
   {
     id: 'beauty',
-    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1600&q=80',
     tagLabel: '美肌内服薬',
     tagBg: '#5BC8E8',
     tagColor: '#fff',
@@ -21,7 +21,7 @@ const SLIDES = [
   },
   {
     id: 'diet',
-    imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&q=80',
     tagLabel: 'メディカルダイエット',
     tagBg: '#5CA83A',
     tagColor: '#fff',
