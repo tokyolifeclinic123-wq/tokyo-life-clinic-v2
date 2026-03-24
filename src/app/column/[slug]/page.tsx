@@ -99,7 +99,7 @@ export default async function ColumnDetailPage({ params }: Props) {
       />
       {post.faq && post.faq.length > 0 && <FaqJsonLd items={post.faq} />}
 
-      <div style={{ padding: '80px 80px 100px' }} className="page-pad">
+      <div style={{ padding: '80px 80px 100px', backgroundColor: '#ffffff' }} className="page-pad">
 
         {/* Breadcrumb */}
         <nav style={{ marginBottom: 48, fontSize: 12, color: '#7A8F9A' }}>

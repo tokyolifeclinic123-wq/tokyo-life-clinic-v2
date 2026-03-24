@@ -58,7 +58,7 @@ export default function MounjaroPage() {
         ]}
       />
 
-      <div style={{ padding: '100px 80px' }} className="page-pad">
+      <div style={{ padding: '100px 80px', backgroundColor: '#ffffff' }} className="page-pad">
 
         {/* Page title */}
         <div style={{ marginBottom: 64 }}>
