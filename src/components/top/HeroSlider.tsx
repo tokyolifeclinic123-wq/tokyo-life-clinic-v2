@@ -1,13 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { LineButton } from '@/components/ui/LineButton'
 
 const SLIDES = [
   {
     id: 'beauty',
-    background: 'linear-gradient(135deg, #E8F8FD 0%, #BDE8F6 40%, #5BC8E8 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=80',
     tagLabel: '美肌内服薬',
     tagBg: '#5BC8E8',
     tagColor: '#fff',
@@ -17,11 +18,10 @@ const SLIDES = [
       { name: 'イソトレチノイン 10mg', target: '軽度〜中等度' },
       { name: 'イソトレチノイン 20mg', target: '中等度〜重度' },
     ],
-    accent: '#5BC8E8',
   },
   {
     id: 'diet',
-    background: 'linear-gradient(135deg, #F0FBE8 0%, #C8EDA8 40%, #8CC84B 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=80',
     tagLabel: 'メディカルダイエット',
     tagBg: '#5CA83A',
     tagColor: '#fff',
@@ -32,7 +32,6 @@ const SLIDES = [
       { name: 'マンジャロ 5mg',   target: '維持期' },
       { name: 'マンジャロ 7.5mg', target: '強化期' },
     ],
-    accent: '#5CA83A',
   },
 ] as const
 
@@ -69,14 +68,32 @@ export function HeroSlider() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: slide.background,
             display: 'flex',
             alignItems: 'center',
             padding: '0 80px',
           }}
         >
+          {/* Background image */}
+          <Image
+            src={slide.imageUrl}
+            alt=""
+            fill
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+            priority={slide.id === 'beauty'}
+          />
+
+          {/* White overlay for readability */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              backgroundColor: 'rgba(255,255,255,0.55)',
+            }}
+          />
+
           {/* Left content */}
-          <div style={{ flex: 1, maxWidth: 600 }}>
+          <div style={{ flex: 1, maxWidth: 600, position: 'relative', zIndex: 1 }}>
             {/* Tag */}
             <span
               style={{
@@ -130,6 +147,8 @@ export function HeroSlider() {
               flexShrink: 0,
               width: 300,
               marginLeft: 60,
+              position: 'relative',
+              zIndex: 1,
             }}
           >
             <p
@@ -148,6 +167,7 @@ export function HeroSlider() {
                 width: '100%',
                 borderCollapse: 'collapse',
                 fontSize: 13,
+                backgroundColor: 'rgba(255,255,255,0.85)',
               }}
             >
               <thead>
