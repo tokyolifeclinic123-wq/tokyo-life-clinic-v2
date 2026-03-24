@@ -30,15 +30,24 @@ export function Footer() {
         {/* Left: clinic info */}
         <div>
           <div style={{ marginBottom: 16 }}>
-            <Image
-              src="/logo-transparent.png"
-              alt="東京LIFEオンラインクリニック"
-              width={200}
-              height={55}
+            <div
               style={{
-                objectFit: 'contain',
+                display: 'inline-block',
+                background: 'rgba(255, 255, 255, 0.15)',
+                padding: '12px 16px',
+                borderRadius: 8,
               }}
-            />
+            >
+              <Image
+                src="/logo-transparent.png"
+                alt="東京LIFEオンラインクリニック"
+                width={200}
+                height={55}
+                style={{
+                  objectFit: 'contain',
+                }}
+              />
+            </div>
           </div>
 
           <dl
