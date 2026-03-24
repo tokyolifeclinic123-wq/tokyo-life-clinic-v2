@@ -31,7 +31,7 @@ export function Footer() {
         <div>
           <div style={{ marginBottom: 16 }}>
             <Image
-              src="/logo.png"
+              src="/logo-transparent.png"
               alt="東京LIFEオンラインクリニック"
               width={200}
               height={55}
