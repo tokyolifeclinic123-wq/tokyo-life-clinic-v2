@@ -5,7 +5,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/JsonLd'
 import { CLINIC } from '@/lib/constants'
 import type { Column, ColumnCategory } from '@/types/microcms'
 
-export const revalidate = 0
+export const revalidate = 3600
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
