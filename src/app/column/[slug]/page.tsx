@@ -10,7 +10,7 @@ import type { Column, ColumnCategory } from '@/types/microcms'
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from '@/components/seo/JsonLd'
 import { CLINIC } from '@/lib/constants'
 
-export const revalidate = 3600
+export const revalidate = 0
 
 interface Props {
   params: { slug: string }
