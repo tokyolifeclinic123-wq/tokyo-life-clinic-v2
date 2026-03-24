@@ -5,10 +5,10 @@ import Link from 'next/link'
 import { LineButton } from '@/components/ui/LineButton'
 
 const NAV_LINKS = [
-  { href: '/treatments', label: '施術メニュー' },
-  { href: '/pricing',    label: '料金表' },
-  { href: '/column',     label: 'コラム' },
-  { href: '/about',      label: 'クリニック案内' },
+  { href: '/menu/isotretinoin', label: '施術メニュー' },
+  { href: '/price',             label: '料金表' },
+  { href: '/column',            label: 'コラム' },
+  { href: '/access',            label: 'クリニック案内' },
 ]
 
 export function Header() {
