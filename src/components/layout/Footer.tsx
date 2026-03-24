@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { CLINIC } from '@/lib/constants'
 
@@ -29,30 +30,16 @@ export function Footer() {
         {/* Left: clinic info */}
         <div>
           <div style={{ marginBottom: 16 }}>
-            <div
+            <Image
+              src="/logo.png"
+              alt="東京LIFEオンラインクリニック"
+              width={200}
+              height={55}
               style={{
-                fontFamily: 'var(--font-cormorant)',
-                fontSize: 18,
-                fontWeight: 300,
-                color: 'rgba(255,255,255,0.9)',
-                letterSpacing: '0.1em',
-                textTransform: 'lowercase',
+                objectFit: 'contain',
+                filter: 'brightness(0) invert(1)',
               }}
-            >
-              tokyo life online clinic
-            </div>
-            <div
-              style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: 11,
-                fontWeight: 300,
-                color: 'rgba(255,255,255,0.5)',
-                letterSpacing: '0.08em',
-                marginTop: 4,
-              }}
-            >
-              東京LIFEオンラインクリニック
-            </div>
+            />
           </div>
 
           <dl

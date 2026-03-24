@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { LineButton } from '@/components/ui/LineButton'
 
@@ -33,33 +34,15 @@ export function Header() {
       }}
     >
       {/* Logo */}
-      <Link href="/" style={{ textDecoration: 'none', flexShrink: 0 }}>
-        <div>
-          <div
-            style={{
-              fontFamily: 'var(--font-cormorant)',
-              fontSize: 15,
-              fontWeight: 300,
-              letterSpacing: '0.1em',
-              color: '#1A3A4A',
-              textTransform: 'lowercase',
-            }}
-          >
-            tokyo life online clinic
-          </div>
-          <div
-            style={{
-              fontFamily: 'var(--font-serif)',
-              fontSize: 10,
-              fontWeight: 300,
-              color: '#7A8F9A',
-              letterSpacing: '0.08em',
-              marginTop: 2,
-            }}
-          >
-            東京LIFEオンラインクリニック
-          </div>
-        </div>
+      <Link href="/" style={{ textDecoration: 'none', flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+        <Image
+          src="/logo.png"
+          alt="東京LIFEオンラインクリニック"
+          width={180}
+          height={50}
+          style={{ objectFit: 'contain' }}
+          priority
+        />
       </Link>
 
       {/* Center nav (hidden on SP) */}
@@ -76,7 +59,7 @@ export function Header() {
             key={href}
             href={href}
             style={{
-              fontSize: 13,
+              fontSize: 14,
               color: '#7A8F9A',
               textDecoration: 'none',
               fontWeight: 400,

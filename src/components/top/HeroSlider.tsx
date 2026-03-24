@@ -114,7 +114,7 @@ export function HeroSlider() {
             <h1
               style={{
                 fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(22px, 3vw, 38px)',
+                fontSize: 'clamp(22px, 3.5vw, 52px)',
                 fontWeight: 400,
                 color: '#1A3A4A',
                 lineHeight: 1.6,

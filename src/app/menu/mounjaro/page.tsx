@@ -78,7 +78,7 @@ export default function MounjaroPage() {
           <h1
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(24px, 3vw, 36px)',
+              fontSize: 'clamp(24px, 3vw, 42px)',
               fontWeight: 400,
               color: '#1A3A4A',
             }}

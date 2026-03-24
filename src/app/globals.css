@@ -11,6 +11,14 @@ body {
   color: var(--foreground);
   background: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
 }
 
 @layer utilities {

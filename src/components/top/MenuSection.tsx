@@ -64,7 +64,7 @@ export function MenuSection() {
         <h2
           style={{
             fontFamily: 'var(--font-serif)',
-            fontSize: 'clamp(22px, 2.5vw, 30px)',
+            fontSize: 'clamp(24px, 2.8vw, 40px)',
             fontWeight: 400,
             color: '#1A3A4A',
           }}
