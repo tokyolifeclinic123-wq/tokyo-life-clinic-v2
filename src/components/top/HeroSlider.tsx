@@ -14,10 +14,6 @@ const SLIDES = [
     tagColor: '#fff',
     h1: '医師が処方する本格的なニキビ治療を自宅から。',
     sub: 'イソトレチノインは、重症ニキビ・繰り返すニキビに高い効果が認められた医療用内服薬。オンライン診療で、手軽に・確実に。',
-    drugs: [
-      { name: 'イソトレチノイン 10mg', target: '軽度〜中等度' },
-      { name: 'イソトレチノイン 20mg', target: '中等度〜重度' },
-    ],
   },
   {
     id: 'diet',
@@ -27,11 +23,6 @@ const SLIDES = [
     tagColor: '#fff',
     h1: 'GLP-1受容体作動薬マンジャロで科学的な減量を。',
     sub: '週1回の自己注射で、食欲をコントロール。医師のサポートと定期フォローで安全・確実に体重管理を実現します。',
-    drugs: [
-      { name: 'マンジャロ 2.5mg', target: '導入期' },
-      { name: 'マンジャロ 5mg',   target: '維持期' },
-      { name: 'マンジャロ 7.5mg', target: '強化期' },
-    ],
   },
 ] as const
 
@@ -92,8 +83,8 @@ export function HeroSlider() {
             }}
           />
 
-          {/* Left content */}
-          <div style={{ flex: 1, maxWidth: 600, position: 'relative', zIndex: 1 }}>
+          {/* Content */}
+          <div style={{ maxWidth: 680, position: 'relative', zIndex: 1 }}>
             {/* Tag */}
             <span
               style={{
@@ -131,101 +122,13 @@ export function HeroSlider() {
                 color: '#2C3E50',
                 lineHeight: 1.9,
                 marginBottom: 40,
-                maxWidth: 480,
+                maxWidth: 540,
               }}
             >
               {slide.sub}
             </p>
 
             <LineButton location="hero" label="LINEで無料相談する" />
-          </div>
-
-          {/* Right: drug table (PC only) */}
-          <div
-            className="hero-drug-table"
-            style={{
-              flexShrink: 0,
-              width: 300,
-              marginLeft: 60,
-              position: 'relative',
-              zIndex: 1,
-            }}
-          >
-            <p
-              style={{
-                fontSize: 11,
-                color: '#7A8F9A',
-                letterSpacing: '0.1em',
-                marginBottom: 12,
-                textTransform: 'uppercase',
-              }}
-            >
-              処方薬剤
-            </p>
-            <table
-              style={{
-                width: '100%',
-                borderCollapse: 'collapse',
-                fontSize: 13,
-                backgroundColor: 'rgba(255,255,255,0.85)',
-              }}
-            >
-              <thead>
-                <tr>
-                  <th
-                    style={{
-                      textAlign: 'left',
-                      padding: '8px 12px',
-                      borderBottom: '1px solid rgba(26,58,74,0.2)',
-                      fontWeight: 500,
-                      color: '#1A3A4A',
-                      fontSize: 11,
-                      letterSpacing: '0.05em',
-                    }}
-                  >
-                    薬剤名
-                  </th>
-                  <th
-                    style={{
-                      textAlign: 'left',
-                      padding: '8px 12px',
-                      borderBottom: '1px solid rgba(26,58,74,0.2)',
-                      fontWeight: 500,
-                      color: '#1A3A4A',
-                      fontSize: 11,
-                      letterSpacing: '0.05em',
-                    }}
-                  >
-                    対象
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {slide.drugs.map((d) => (
-                  <tr key={d.name}>
-                    <td
-                      style={{
-                        padding: '10px 12px',
-                        borderBottom: '1px solid rgba(26,58,74,0.1)',
-                        color: '#2C3E50',
-                      }}
-                    >
-                      {d.name}
-                    </td>
-                    <td
-                      style={{
-                        padding: '10px 12px',
-                        borderBottom: '1px solid rgba(26,58,74,0.1)',
-                        color: '#7A8F9A',
-                        fontSize: 12,
-                      }}
-                    >
-                      {d.target}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
           </div>
         </motion.div>
       </AnimatePresence>
@@ -260,12 +163,6 @@ export function HeroSlider() {
           />
         ))}
       </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          .hero-drug-table { display: none !important; }
-        }
-      `}</style>
     </section>
   )
 }
