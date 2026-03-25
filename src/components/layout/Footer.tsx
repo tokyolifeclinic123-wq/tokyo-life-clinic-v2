@@ -5,8 +5,9 @@ import { CLINIC } from '@/lib/constants'
 const FOOTER_LINKS = [
   { href: '/treatments', label: '施術メニュー' },
   { href: '/pricing',    label: '料金表' },
-  { href: '/privacy',    label: 'プライバシーポリシー' },
-  { href: '/legal',      label: '特定商取引法' },
+  { href: 'https://docs.google.com/document/d/1gZen7vmW3oeZGgTmmI2JpnKmi0dML3Bdm72GL3NRGEg/edit?tab=t.0', label: '特定商取引法' },
+  { href: 'https://docs.google.com/document/d/1gZen7vmW3oeZGgTmmI2JpnKmi0dML3Bdm72GL3NRGEg/edit?tab=t.0', label: '利用規約' },
+  { href: 'https://docs.google.com/document/d/1gZen7vmW3oeZGgTmmI2JpnKmi0dML3Bdm72GL3NRGEg/edit?tab=t.0', label: 'プライバシーポリシー' },
 ]
 
 export function Footer() {
@@ -110,7 +111,7 @@ export function Footer() {
 
       {/* Copyright */}
       <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.3)', textAlign: 'center' }}>
-        © 2025 東京LIFEオンラインクリニック All Rights Reserved.
+        © 2026 東京LIFEオンラインクリニック All Rights Reserved.
       </p>
     </footer>
   )

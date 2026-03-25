@@ -101,8 +101,7 @@ export default function IsotretinoinPage() {
             イソトレチノインとは
           </h2>
           <p style={{ fontSize: 15, color: '#2C3E50', lineHeight: 1.9, maxWidth: 720 }}>
-            イソトレチノインは、皮脂の分泌を抑制し、毛穴の詰まりを改善する医療用内服薬です。
-            重症ニキビ・繰り返すニキビ・毛穴の開きなどに高い効果が認められています。
+            ビタミンA誘導体の一種で、皮脂の分泌を抑える作用、アクネ菌に対する抗菌作用、抗炎症作用に優れています。そのため重度のニキビやニキビ跡、毛穴の開き、毛穴の黒ずみ、赤ら顔などの肌トラブルに効果的です。
           </p>
         </section>
 
@@ -259,20 +258,23 @@ export default function IsotretinoinPage() {
           >
             注意事項・副作用について
           </h2>
-          <p style={{ fontSize: 14, color: '#2C3E50', lineHeight: 1.9, marginBottom: 20 }}>
-            イソトレチノインは強力な薬効を持つため、以下の副作用が現れる場合があります。
-            服用前に必ず医師の診察を受けてください。
-          </p>
-          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px', display: 'flex', flexDirection: 'column', gap: 10 }}>
-            {SIDE_EFFECTS.map((item) => (
-              <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 14, color: '#2C3E50' }}>
-                <span style={{ display: 'inline-block', width: 6, height: 6, backgroundColor: '#C9A96E', flexShrink: 0 }} />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p style={{ fontSize: 12, color: '#7A8F9A', lineHeight: 1.8 }}>
-            副作用の程度・頻度には個人差があります。気になる症状が現れた場合はすぐにご連絡ください。
+          <p style={{ fontSize: 14, color: '#2C3E50', lineHeight: 1.9, whiteSpace: 'pre-wrap' }}>
+            {`イソトレチノインの重大な副作用として、流産や胎児奇形があります。そのため、イソトレチノインの服用中、および服用終了後は必ず避妊してください。女性は6ヵ月間、男性は2ヵ月間、避妊が必要となります。また他の主な副作用には、発疹、皮膚の乾燥、頭痛、視覚障害、筋肉や関節の圧痛、悪心、嘔吐、鼻出血、うつ病、自殺企図などがあります。またイソトレチノインの効果や経過には個人差があります。
+
+イソトレチノイン服用の際は、次の点に注意してください。
+・妊娠中、および妊娠の可能性がある方の内服はできません。
+・服用期間中、最後に服用してから6ヵ月間は献血を避けてください。
+・飲み忘れた場合でも、1回の内服量を守りましょう。
+・他の美容施術をする場合は、必ず医師へ相談しましょう。
+・服用期間中は紫外線の影響を受けやすくなります。十分な紫外線対策をしてください。
+
+以下に当てはまる方は処方できません。
+・15歳未満の女性、18歳未満の男性
+・妊娠の可能性がある方、妊娠中や授乳中の方
+・成長期で身長が伸びている方
+
+【未承認医薬品等について】
+アクネトレント（イソトレチノイン）は、日本国薬機法上の医療薬品として認証・承認を得ていない医薬品です。米国のFDA等諸外国で承認されています。万が一重篤な副作用が出た場合は、国の医薬品副作用被害救済制度の対象外となります。`}
           </p>
         </section>
 
@@ -289,26 +291,9 @@ export default function IsotretinoinPage() {
           >
             料金
           </h2>
-          <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 12 }}>
-            <thead>
-              <tr>
-                <th style={TH_STYLE}>薬剤名</th>
-                <th style={TH_STYLE}>用量</th>
-                <th style={{ ...TH_STYLE, textAlign: 'right' }}>価格（30日分・税込）</th>
-              </tr>
-            </thead>
-            <tbody>
-              {['10mg', '20mg'].map((dose) => (
-                <tr key={dose}>
-                  <td style={TD_STYLE}>イソトレチノイン</td>
-                  <td style={TD_STYLE}>{dose}</td>
-                  {/* TODO: 実際の価格に差し替え */}
-                  <td style={{ ...TD_STYLE, textAlign: 'right', color: '#7A8F9A' }}>¥ ─,───</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <p style={{ fontSize: 12, color: '#9A9A9A' }}>※表示価格はすべて税込です。</p>
+          <p style={{ fontSize: 15, color: '#2C3E50', lineHeight: 1.9 }}>
+            <a href="/price" style={{ color: '#5BC8E8', textDecoration: 'underline' }}>料金表をご確認ください</a>
+          </p>
         </section>
 
         {/* CTA */}

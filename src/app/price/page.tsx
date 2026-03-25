@@ -109,14 +109,12 @@ export default function PricePage() {
               <tr>
                 <td style={TD_STYLE}>イソトレチノイン</td>
                 <td style={TD_STYLE}>10mg</td>
-                {/* TODO: 実際の価格に差し替え */}
-                <td style={{ ...TD_STYLE, textAlign: 'right', color: '#7A8F9A' }}>¥ ─,───</td>
+                <td style={{ ...TD_STYLE, textAlign: 'right' }}>¥5,000</td>
               </tr>
               <tr>
                 <td style={TD_STYLE}>イソトレチノイン</td>
                 <td style={TD_STYLE}>20mg</td>
-                {/* TODO: 実際の価格に差し替え */}
-                <td style={{ ...TD_STYLE, textAlign: 'right', color: '#7A8F9A' }}>¥ ─,───</td>
+                <td style={{ ...TD_STYLE, textAlign: 'right' }}>¥7,000</td>
               </tr>
             </tbody>
           </table>
@@ -145,15 +143,14 @@ export default function PricePage() {
             </thead>
             <tbody>
               {[
-                { dose: '2.5mg' },
-                { dose: '5mg' },
-                { dose: '7.5mg' },
-              ].map(({ dose }) => (
+                { dose: '2.5mg', price: '¥16,000（¥4,000/本）' },
+                { dose: '5mg',   price: '¥28,000（¥7,000/本）' },
+                { dose: '7.5mg', price: '¥39,000（¥9,750/本）' },
+              ].map(({ dose, price }) => (
                 <tr key={dose}>
                   <td style={TD_STYLE}>マンジャロ</td>
                   <td style={TD_STYLE}>{dose}</td>
-                  {/* TODO: 実際の価格に差し替え */}
-                  <td style={{ ...TD_STYLE, textAlign: 'right', color: '#7A8F9A' }}>¥ ─,───</td>
+                  <td style={{ ...TD_STYLE, textAlign: 'right' }}>{price}</td>
                 </tr>
               ))}
             </tbody>

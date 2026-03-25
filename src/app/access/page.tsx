@@ -80,8 +80,7 @@ export default function AccessPage() {
         {/* Intro */}
         <section style={{ marginBottom: 64 }}>
           <p style={{ fontSize: 15, color: '#2C3E50', lineHeight: 1.9, maxWidth: 720 }}>
-            東京LIFEオンラインクリニックは、忙しい現代人のために生まれたオンライン専門クリニックです。
-            通院不要・24時間受付・薬を自宅にお届けする仕組みで、あなたのペースで治療を続けられます。
+            全国どこからでも、スマホひとつでいつものお薬を。待ち時間ゼロのオンライン診療。お住まいの地域に関わらず、専門的な医療アドバイスを受けられるオンライン診療サービスです。画面越しでも対面診療と変わらない丁寧なヒアリングを行い、お一人おひとりの症状に合わせた最適な処方・アドバイスをご提案します。
           </p>
         </section>
 
@@ -98,48 +97,23 @@ export default function AccessPage() {
           >
             院長プロフィール
           </h2>
-          <div
-            style={{
-              display: 'flex',
-              gap: 40,
-              alignItems: 'flex-start',
-            }}
-            className="profile-row"
-          >
-            {/* Avatar placeholder */}
-            <div
+          <div>
+            <p
               style={{
-                width: 120,
-                height: 120,
-                backgroundColor: '#E8F8FD',
-                border: '1px solid #D6EEF7',
-                flexShrink: 0,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                fontFamily: 'var(--font-serif)',
+                fontSize: 22,
+                fontWeight: 400,
+                color: '#1A3A4A',
+                marginBottom: 4,
               }}
             >
-              <span style={{ fontSize: 11, color: '#A8DFF2', letterSpacing: '0.05em' }}>PHOTO</span>
-            </div>
-
-            <div>
-              <p
-                style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: 22,
-                  fontWeight: 400,
-                  color: '#1A3A4A',
-                  marginBottom: 4,
-                }}
-              >
-                {CLINIC.director}
-              </p>
-              <p style={{ fontSize: 13, color: '#7A8F9A', marginBottom: 20 }}>院長・医師</p>
-              <p style={{ fontSize: 14, color: '#2C3E50', lineHeight: 1.9, maxWidth: 560 }}>
-                患者様一人ひとりに寄り添い、丁寧な診察を心がけています。
-                オンラインでも対面と変わらない質の高い医療を提供することをお約束します。
-              </p>
-            </div>
+              {CLINIC.director}
+            </p>
+            <p style={{ fontSize: 13, color: '#7A8F9A', marginBottom: 20 }}>院長・医師</p>
+            <p style={{ fontSize: 14, color: '#2C3E50', lineHeight: 1.9, maxWidth: 560 }}>
+              患者様一人ひとりに寄り添い、丁寧な診察を心がけています。
+              オンラインでも対面と変わらない質の高い医療を提供することをお約束します。
+            </p>
           </div>
         </section>
 
@@ -168,7 +142,7 @@ export default function AccessPage() {
           </table>
         </section>
 
-        {/* Map placeholder */}
+        {/* Address */}
         <section style={{ marginBottom: 64 }}>
           <h2
             style={{
@@ -181,22 +155,8 @@ export default function AccessPage() {
           >
             所在地
           </h2>
-          {/* TODO: Google Maps 埋め込みURLを差し替え */}
-          <div
-            style={{
-              width: '100%',
-              height: 320,
-              backgroundColor: '#E8F8FD',
-              border: '1px solid #D6EEF7',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <p style={{ fontSize: 13, color: '#A8DFF2', letterSpacing: '0.08em' }}>地図を表示予定</p>
-          </div>
-          <p style={{ fontSize: 12, color: '#7A8F9A', marginTop: 12 }}>
-            〒{CLINIC.postalCode} {CLINIC.address}
+          <p style={{ fontSize: 14, color: '#2C3E50' }}>
+            〒107-0052 東京都港区赤坂6丁目4-18-406
           </p>
         </section>
 

@@ -101,9 +101,7 @@ export default function MounjaroPage() {
             マンジャロとは
           </h2>
           <p style={{ fontSize: 15, color: '#2C3E50', lineHeight: 1.9, maxWidth: 720 }}>
-            マンジャロ（一般名：チルゼパチド）は、GLP-1/GIP受容体作動薬です。
-            食欲を抑制し、血糖値をコントロールすることで、体重管理をサポートします。
-            週1回の自己注射で使用します。
+            GLP-1受容体作動薬の一種で、食後の満腹感の持続と血糖値低下を促進する効果があります。また、脂肪を燃焼させて代謝を上げてくれるため、体重減少が期待できます。
           </p>
         </section>
 
@@ -251,19 +249,18 @@ export default function MounjaroPage() {
           >
             注意事項・副作用について
           </h2>
-          <p style={{ fontSize: 14, color: '#2C3E50', lineHeight: 1.9, marginBottom: 20 }}>
-            マンジャロは医師の処方が必要な医薬品です。以下の副作用が現れる場合があります。
-          </p>
-          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px', display: 'flex', flexDirection: 'column', gap: 10 }}>
-            {SIDE_EFFECTS.map((item) => (
-              <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 14, color: '#2C3E50' }}>
-                <span style={{ display: 'inline-block', width: 6, height: 6, backgroundColor: '#C9A96E', flexShrink: 0 }} />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p style={{ fontSize: 12, color: '#7A8F9A', lineHeight: 1.8 }}>
-            妊娠中・授乳中の方、重篤な消化器疾患のある方は使用できません。診察時に詳しくご説明します。
+          <p style={{ fontSize: 14, color: '#2C3E50', lineHeight: 1.9, whiteSpace: 'pre-wrap' }}>
+            {`副作用で主にみられるものは、吐き気、胸やけ、下痢、便秘などの胃腸障害ですが、投与継続をすることで症状は緩和していきます。極めて稀ですが急性膵炎などの副作用もあります。症状が辛い場合は使用を中止し、担当の医師にご相談ください。
+
+以下に当てはまる方は投与できません。
+・糖尿病治療中の方
+・甲状腺疾患、膵臓疾患の方
+・18歳未満、65歳以上の方
+・重度の胃腸障害のある方、膵炎の既往歴のある方
+・妊娠中、授乳中、妊活中の方
+
+【未承認医薬品等について】
+マンジャロは2型糖尿病の治療薬として承認されていますが、当院でのダイエット目的での処方は国内で承認されていません。万が一重篤な副作用が出た場合は、国の医薬品副作用被害救済制度の対象外となります。`}
           </p>
         </section>
 
@@ -280,26 +277,9 @@ export default function MounjaroPage() {
           >
             料金
           </h2>
-          <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 12 }}>
-            <thead>
-              <tr>
-                <th style={TH_STYLE}>薬剤名</th>
-                <th style={TH_STYLE}>用量</th>
-                <th style={{ ...TH_STYLE, textAlign: 'right' }}>価格（4週分・税込）</th>
-              </tr>
-            </thead>
-            <tbody>
-              {['2.5mg', '5mg', '7.5mg'].map((dose) => (
-                <tr key={dose}>
-                  <td style={TD_STYLE}>マンジャロ</td>
-                  <td style={TD_STYLE}>{dose}</td>
-                  {/* TODO: 実際の価格に差し替え */}
-                  <td style={{ ...TD_STYLE, textAlign: 'right', color: '#7A8F9A' }}>¥ ─,───</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <p style={{ fontSize: 12, color: '#9A9A9A' }}>※表示価格はすべて税込です。</p>
+          <p style={{ fontSize: 15, color: '#2C3E50', lineHeight: 1.9 }}>
+            <a href="/price" style={{ color: '#5BC8E8', textDecoration: 'underline' }}>料金表をご確認ください</a>
+          </p>
         </section>
 
         {/* CTA */}

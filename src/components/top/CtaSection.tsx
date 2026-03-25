@@ -31,7 +31,7 @@ export function CtaSection() {
           marginBottom: 40,
         }}
       >
-        24時間受付中 ｜ 初回相談無料 ｜ プライバシー完全保護
+        24時間受付中 ｜ 初診・再診・ご相談０円 ｜ プライバシー完全保護
       </p>
 
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 32 }}>
