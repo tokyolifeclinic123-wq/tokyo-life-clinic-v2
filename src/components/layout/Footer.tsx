@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { CLINIC } from '@/lib/constants'
 
 const FOOTER_LINKS = [
-  { href: '/treatments', label: '施術メニュー' },
-  { href: '/pricing',    label: '料金表' },
-  { href: 'https://docs.google.com/document/d/1gZen7vmW3oeZGgTmmI2JpnKmi0dML3Bdm72GL3NRGEg/edit?tab=t.0', label: '特定商取引法' },
-  { href: 'https://docs.google.com/document/d/1gZen7vmW3oeZGgTmmI2JpnKmi0dML3Bdm72GL3NRGEg/edit?tab=t.0', label: '利用規約' },
-  { href: 'https://docs.google.com/document/d/1gZen7vmW3oeZGgTmmI2JpnKmi0dML3Bdm72GL3NRGEg/edit?tab=t.0', label: 'プライバシーポリシー' },
+  { href: '/menu/isotretinoin', label: '施術メニュー' },
+  { href: '/price',             label: '料金表' },
+  { href: '/legal/tokusho',     label: '特定商取引法' },
+  { href: '/legal/terms',       label: '利用規約' },
+  { href: '/legal/privacy',     label: 'プライバシーポリシー' },
 ]
 
 export function Footer() {

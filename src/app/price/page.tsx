@@ -100,21 +100,24 @@ export default function PricePage() {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr>
+                <th style={TH_STYLE}>プラン</th>
                 <th style={TH_STYLE}>薬剤名</th>
                 <th style={TH_STYLE}>用量</th>
-                <th style={{ ...TH_STYLE, textAlign: 'right' }}>価格（30日分）</th>
+                <th style={{ ...TH_STYLE, textAlign: 'right' }}>価格（税込）</th>
               </tr>
             </thead>
             <tbody>
               <tr>
+                <td style={TD_STYLE}>定期配送</td>
                 <td style={TD_STYLE}>イソトレチノイン</td>
                 <td style={TD_STYLE}>10mg</td>
-                <td style={{ ...TD_STYLE, textAlign: 'right' }}>¥5,000</td>
+                <td style={{ ...TD_STYLE, textAlign: 'right' }}>¥5,000/月</td>
               </tr>
               <tr>
+                <td style={TD_STYLE}>定期配送</td>
                 <td style={TD_STYLE}>イソトレチノイン</td>
                 <td style={TD_STYLE}>20mg</td>
-                <td style={{ ...TD_STYLE, textAlign: 'right' }}>¥7,000</td>
+                <td style={{ ...TD_STYLE, textAlign: 'right' }}>¥7,000/月</td>
               </tr>
             </tbody>
           </table>
@@ -136,9 +139,10 @@ export default function PricePage() {
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr>
+                <th style={TH_STYLE}>プラン</th>
                 <th style={TH_STYLE}>薬剤名</th>
                 <th style={TH_STYLE}>用量</th>
-                <th style={{ ...TH_STYLE, textAlign: 'right' }}>価格（4週分）</th>
+                <th style={{ ...TH_STYLE, textAlign: 'right' }}>価格（税込）</th>
               </tr>
             </thead>
             <tbody>
@@ -148,6 +152,7 @@ export default function PricePage() {
                 { dose: '7.5mg', price: '¥39,000（¥9,750/本）' },
               ].map(({ dose, price }) => (
                 <tr key={dose}>
+                  <td style={TD_STYLE}>定期配送</td>
                   <td style={TD_STYLE}>マンジャロ</td>
                   <td style={TD_STYLE}>{dose}</td>
                   <td style={{ ...TD_STYLE, textAlign: 'right' }}>{price}</td>

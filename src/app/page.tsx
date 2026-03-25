@@ -1,5 +1,4 @@
 import { HeroSlider }            from '@/components/top/HeroSlider'
-import { TrustBar }              from '@/components/top/TrustBar'
 import { MenuSection }           from '@/components/top/MenuSection'
 import { WhySection }            from '@/components/top/WhySection'
 import { FlowSection }           from '@/components/top/FlowSection'
@@ -13,7 +12,6 @@ export default function Home() {
     <>
       <MedicalBusinessJsonLd />
       <HeroSlider />
-      <TrustBar />
       <MenuSection />
       <WhySection />
       <FlowSection />
