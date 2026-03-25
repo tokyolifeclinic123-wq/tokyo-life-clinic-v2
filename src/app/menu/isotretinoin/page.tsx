@@ -39,13 +39,6 @@ const FLOW_STEPS = [
   { num: '04', title: '薬がご自宅に届く',     desc: '処方薬を郵送でお届け。不明点はLINEでいつでも相談可能です。' },
 ]
 
-const SIDE_EFFECTS = [
-  '皮膚・口唇の乾燥',
-  '目の乾燥',
-  '筋肉痛・関節痛',
-  '血中脂質の上昇',
-  '妊娠中・授乳中は使用不可',
-]
 
 export default function IsotretinoinPage() {
   return (

@@ -39,13 +39,6 @@ const FLOW_STEPS = [
   { num: '04', title: '薬がご自宅に届く',   desc: '処方薬を郵送でお届け。定期フォローもLINEで実施します。' },
 ]
 
-const SIDE_EFFECTS = [
-  '吐き気・嘔吐',
-  '下痢・便秘',
-  '食欲不振',
-  '注射部位の反応',
-  '低血糖（他の糖尿病薬と併用時）',
-]
 
 export default function MounjaroPage() {
   return (
