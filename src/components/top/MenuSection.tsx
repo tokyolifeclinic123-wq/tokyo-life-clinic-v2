@@ -13,23 +13,23 @@ const TABS: { key: TabKey; label: string }[] = [
 
 const MENU_DATA: Record<TabKey, {
   description: string
-  rows: { name: string; dose: string; target: string }[]
+  rows: { name: string; dose: string; target: string; price: string }[]
 }> = {
   beauty: {
     description:
       '肌荒れ・ニキビ・皮脂の過剰分泌にお悩みの方へ。医師が処方するイソトレチノインで、本格的な肌改善を目指します。',
     rows: [
-      { name: 'イソトレチノイン', dose: '10mg', target: '軽度〜中等度のニキビ' },
-      { name: 'イソトレチノイン', dose: '20mg', target: '中等度〜重度のニキビ' },
+      { name: 'イソトレチノイン', dose: '10mg', target: '軽度〜中等度のニキビ', price: '¥5,000〜 / 月（定期配送）' },
+      { name: 'イソトレチノイン', dose: '20mg', target: '中等度〜重度のニキビ', price: '¥7,000〜 / 月（定期配送）' },
     ],
   },
   diet: {
     description:
       'GLP-1/GIP受容体作動薬「マンジャロ」で科学的に食欲をコントロール。医師の管理のもと、安全に体重管理を行います。',
     rows: [
-      { name: 'マンジャロ', dose: '2.5mg', target: '導入期（初期用量）' },
-      { name: 'マンジャロ', dose: '5mg',   target: '維持期' },
-      { name: 'マンジャロ', dose: '7.5mg', target: '強化期（医師判断）' },
+      { name: 'マンジャロ', dose: '2.5mg', target: '導入期（初期用量）', price: '¥16,000〜 / 月（定期配送）' },
+      { name: 'マンジャロ', dose: '5mg',   target: '維持期',             price: '¥28,000〜 / 月（定期配送）' },
+      { name: 'マンジャロ', dose: '7.5mg', target: '強化期（医師判断）', price: '¥39,000〜 / 月（定期配送）' },
     ],
   },
 }
@@ -225,18 +225,17 @@ export function MenuSection() {
                   >
                     {row.target}
                   </td>
-                  {/* TODO: 実際の価格に差し替え */}
                   <td
                     style={{
                       padding: '14px 16px',
                       borderBottom: '1px solid #D6EEF7',
-                      color: '#7A8F9A',
+                      color: '#2C3E50',
                       fontSize: 13,
                       textAlign: 'right',
                       fontVariantNumeric: 'tabular-nums',
                     }}
                   >
-                    ¥ ─,───
+                    {row.price}
                   </td>
                 </tr>
               ))}

@@ -270,9 +270,32 @@ export default function MounjaroPage() {
           >
             料金
           </h2>
-          <p style={{ fontSize: 15, color: '#2C3E50', lineHeight: 1.9 }}>
-            <a href="/price" style={{ color: '#5BC8E8', textDecoration: 'underline' }}>料金表をご確認ください</a>
-          </p>
+          <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 12 }}>
+            <thead>
+              <tr>
+                <th style={TH_STYLE}>薬剤名</th>
+                <th style={TH_STYLE}>用量</th>
+                <th style={{ ...TH_STYLE, textAlign: 'right' }}>価格（税込・定期配送）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style={TD_STYLE}>マンジャロ</td>
+                <td style={TD_STYLE}>2.5mg</td>
+                <td style={{ ...TD_STYLE, textAlign: 'right' }}>¥16,000（¥4,000/本）</td>
+              </tr>
+              <tr>
+                <td style={TD_STYLE}>マンジャロ</td>
+                <td style={TD_STYLE}>5mg</td>
+                <td style={{ ...TD_STYLE, textAlign: 'right' }}>¥28,000（¥7,000/本）</td>
+              </tr>
+              <tr>
+                <td style={TD_STYLE}>マンジャロ</td>
+                <td style={TD_STYLE}>7.5mg</td>
+                <td style={{ ...TD_STYLE, textAlign: 'right' }}>¥39,000（¥9,750/本）</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
 
         {/* CTA */}
