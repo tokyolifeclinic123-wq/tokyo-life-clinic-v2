@@ -82,38 +82,46 @@ export function Header() {
           </button>
 
           {dropOpen && (
+            /* paddingTop で隙間を埋めてホバー領域を繋ぎ、z-index を最前面に */
             <div
               style={{
                 position: 'absolute',
                 top: '100%',
                 left: '50%',
                 transform: 'translateX(-50%)',
-                marginTop: 12,
-                backgroundColor: '#fff',
-                border: '1px solid #D6EEF7',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                minWidth: 200,
-                zIndex: 200,
+                paddingTop: 8,
+                zIndex: 9999,
+                pointerEvents: 'auto',
               }}
             >
-              {MENU_LINKS.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  style={{
-                    display: 'block',
-                    padding: '14px 20px',
-                    fontSize: 13,
-                    color: '#2C3E50',
-                    textDecoration: 'none',
-                    borderBottom: '1px solid #F0F8FC',
-                    letterSpacing: '0.04em',
-                  }}
-                  onClick={() => setDropOpen(false)}
-                >
-                  {label}
-                </Link>
-              ))}
+              <div
+                style={{
+                  backgroundColor: '#fff',
+                  border: '1px solid #D6EEF7',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                  minWidth: 200,
+                }}
+              >
+                {MENU_LINKS.map(({ href, label }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    style={{
+                      display: 'block',
+                      padding: '14px 20px',
+                      fontSize: 13,
+                      color: '#2C3E50',
+                      textDecoration: 'none',
+                      borderBottom: '1px solid #F0F8FC',
+                      letterSpacing: '0.04em',
+                      pointerEvents: 'auto',
+                    }}
+                    onClick={() => setDropOpen(false)}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
             </div>
           )}
         </div>
