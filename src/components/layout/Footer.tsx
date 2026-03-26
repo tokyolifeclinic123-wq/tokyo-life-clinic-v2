@@ -5,6 +5,8 @@ import { CLINIC } from '@/lib/constants'
 const FOOTER_LINKS = [
   { href: '/menu/isotretinoin', label: '施術メニュー' },
   { href: '/price',             label: '料金表' },
+  { href: '/legal/tokusho',     label: '特定商取引法に基づく表記' },
+  { href: '/legal/terms',       label: '利用規約' },
   { href: '/legal/privacy',     label: 'プライバシーポリシー' },
 ]
 

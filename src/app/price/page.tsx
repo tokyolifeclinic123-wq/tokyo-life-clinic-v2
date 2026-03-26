@@ -32,6 +32,39 @@ const TD_STYLE: React.CSSProperties = {
   fontSize: 14,
 }
 
+const COMMON_ROWS = [
+  { label: '診察料',        price: '無料' },
+  { label: '再診料',        price: '無料' },
+  { label: '送料（通常）',  price: '¥500' },
+  { label: '送料（クール便）', price: '¥1,000' },
+]
+
+const MOUNJARO_ROWS = [
+  { dose: '2.5mg', plan: '定期配送',            price: '¥16,000' },
+  { dose: '2.5mg', plan: '1ヶ月分',             price: '¥18,000' },
+  { dose: '2.5mg', plan: '3ヶ月まとめ買い定期便', price: '¥45,000' },
+  { dose: '2.5mg', plan: '6ヶ月まとめ買い定期便', price: '¥84,000' },
+  { dose: '5mg',   plan: '定期配送',            price: '¥28,000' },
+  { dose: '5mg',   plan: '1ヶ月分',             price: '¥30,000' },
+  { dose: '5mg',   plan: '3ヶ月まとめ買い定期便', price: '¥78,000' },
+  { dose: '5mg',   plan: '6ヶ月まとめ買い定期便', price: '¥144,000' },
+  { dose: '7.5mg', plan: '定期配送',            price: '¥39,000' },
+  { dose: '7.5mg', plan: '1ヶ月分',             price: '¥41,000' },
+  { dose: '7.5mg', plan: '3ヶ月まとめ買い定期便', price: '¥111,000' },
+  { dose: '7.5mg', plan: '6ヶ月まとめ買い定期便', price: '¥210,000' },
+]
+
+const ISO_ROWS = [
+  { dose: '10mg', plan: '定期配送',            price: '¥5,000' },
+  { dose: '10mg', plan: '1ヶ月分',             price: '¥5,500' },
+  { dose: '10mg', plan: '3ヶ月まとめ買い定期便', price: '¥13,500' },
+  { dose: '10mg', plan: '6ヶ月まとめ買い定期便', price: '¥24,000' },
+  { dose: '20mg', plan: '定期配送',            price: '¥7,000' },
+  { dose: '20mg', plan: '1ヶ月分',             price: '¥7,500' },
+  { dose: '20mg', plan: '3ヶ月まとめ買い定期便', price: '¥19,500' },
+  { dose: '20mg', plan: '6ヶ月まとめ買い定期便', price: '¥36,000' },
+]
+
 export default function PricePage() {
   return (
     <>
@@ -84,7 +117,7 @@ export default function PricePage() {
           表示価格はすべて税込です。診察の結果により処方できない場合があります。
         </p>
 
-        {/* Beauty table */}
+        {/* Common fees */}
         <section style={{ marginBottom: 64 }}>
           <h2
             style={{
@@ -95,35 +128,27 @@ export default function PricePage() {
               marginBottom: 24,
             }}
           >
-            美肌内服薬
+            共通費用
           </h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr>
-                <th style={TH_STYLE}>プラン</th>
-                <th style={TH_STYLE}>薬剤名</th>
-                <th style={TH_STYLE}>用量</th>
-                <th style={{ ...TH_STYLE, textAlign: 'right' }}>価格（税込）</th>
+                <th style={TH_STYLE}>項目</th>
+                <th style={{ ...TH_STYLE, textAlign: 'right' }}>金額</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td style={TD_STYLE}>定期配送</td>
-                <td style={TD_STYLE}>イソトレチノイン</td>
-                <td style={TD_STYLE}>10mg</td>
-                <td style={{ ...TD_STYLE, textAlign: 'right' }}>¥5,000/月</td>
-              </tr>
-              <tr>
-                <td style={TD_STYLE}>定期配送</td>
-                <td style={TD_STYLE}>イソトレチノイン</td>
-                <td style={TD_STYLE}>20mg</td>
-                <td style={{ ...TD_STYLE, textAlign: 'right' }}>¥7,000/月</td>
-              </tr>
+              {COMMON_ROWS.map(({ label, price }) => (
+                <tr key={label}>
+                  <td style={TD_STYLE}>{label}</td>
+                  <td style={{ ...TD_STYLE, textAlign: 'right' }}>{price}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </section>
 
-        {/* Diet table */}
+        {/* Mounjaro table */}
         <section style={{ marginBottom: 64 }}>
           <h2
             style={{
@@ -134,27 +159,54 @@ export default function PricePage() {
               marginBottom: 24,
             }}
           >
-            メディカルダイエット
+            メディカルダイエット（マンジャロ）
           </h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr>
-                <th style={TH_STYLE}>プラン</th>
-                <th style={TH_STYLE}>薬剤名</th>
                 <th style={TH_STYLE}>用量</th>
+                <th style={TH_STYLE}>プラン</th>
                 <th style={{ ...TH_STYLE, textAlign: 'right' }}>価格（税込）</th>
               </tr>
             </thead>
             <tbody>
-              {[
-                { dose: '2.5mg', price: '¥16,000（¥4,000/本）' },
-                { dose: '5mg',   price: '¥28,000（¥7,000/本）' },
-                { dose: '7.5mg', price: '¥39,000（¥9,750/本）' },
-              ].map(({ dose, price }) => (
-                <tr key={dose}>
-                  <td style={TD_STYLE}>定期配送</td>
-                  <td style={TD_STYLE}>マンジャロ</td>
+              {MOUNJARO_ROWS.map(({ dose, plan, price }, i) => (
+                <tr key={i}>
                   <td style={TD_STYLE}>{dose}</td>
+                  <td style={TD_STYLE}>{plan}</td>
+                  <td style={{ ...TD_STYLE, textAlign: 'right' }}>{price}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+
+        {/* Isotretinoin table */}
+        <section style={{ marginBottom: 64 }}>
+          <h2
+            style={{
+              fontFamily: 'var(--font-serif)',
+              fontSize: 20,
+              fontWeight: 400,
+              color: '#1A3A4A',
+              marginBottom: 24,
+            }}
+          >
+            美肌内服薬（イソトレチノイン）
+          </h2>
+          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+            <thead>
+              <tr>
+                <th style={TH_STYLE}>用量</th>
+                <th style={TH_STYLE}>プラン</th>
+                <th style={{ ...TH_STYLE, textAlign: 'right' }}>価格（税込）</th>
+              </tr>
+            </thead>
+            <tbody>
+              {ISO_ROWS.map(({ dose, plan, price }, i) => (
+                <tr key={i}>
+                  <td style={TD_STYLE}>{dose}</td>
+                  <td style={TD_STYLE}>{plan}</td>
                   <td style={{ ...TD_STYLE, textAlign: 'right' }}>{price}</td>
                 </tr>
               ))}
