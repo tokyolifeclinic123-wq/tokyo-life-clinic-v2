@@ -161,6 +161,7 @@ export function Header() {
             cursor: 'pointer',
             padding: 4,
             display: 'none',
+            marginLeft: 'auto',
           }}
         >
           <span style={{ display: 'block', width: 24, height: 2, backgroundColor: '#1A3A4A', margin: '5px 0', transition: 'transform 0.2s', transform: menuOpen ? 'translateY(7px) rotate(45deg)' : 'none' }} />
