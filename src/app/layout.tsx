@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   },
   description: `${CLINIC.name} - 24時間受付のオンライン診療`,
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? 'https://tokyo-life-clinic.com'),
+  openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+  },
 }
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
