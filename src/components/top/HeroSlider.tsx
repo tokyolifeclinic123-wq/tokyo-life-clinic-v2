@@ -8,7 +8,8 @@ export function HeroSlider() {
         src="/hero-main.png"
         alt="東京LIFEオンラインクリニック"
         fill
-        style={{ objectFit: 'cover', objectPosition: 'center' }}
+        quality={100}
+        style={{ objectFit: 'cover', objectPosition: 'top center' }}
         priority
       />
     </section>
