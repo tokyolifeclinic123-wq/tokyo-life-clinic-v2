@@ -3,13 +3,14 @@ import Image from 'next/image'
 
 export function HeroSlider() {
   return (
-    <section style={{ position: 'relative', height: '90vh', minHeight: 600, overflow: 'hidden' }}>
+    <section style={{ position: 'relative', width: '100%' }}>
       <Image
         src="/hero-main.png"
         alt="東京LIFEオンラインクリニック"
-        fill
+        width={1280}
+        height={720}
         quality={100}
-        style={{ objectFit: 'cover', objectPosition: 'top center' }}
+        style={{ width: '100%', height: 'auto', display: 'block' }}
         priority
       />
     </section>
