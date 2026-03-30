@@ -302,25 +302,75 @@ export default function IsotretinoinPage() {
           >
             料金
           </h2>
-          <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 12 }}>
+          <p
+            style={{
+              fontSize: 13,
+              color: '#7A8F9A',
+              marginBottom: 24,
+              paddingLeft: 16,
+              borderLeft: '2px solid #D6EEF7',
+              lineHeight: 1.8,
+            }}
+          >
+            表示価格はすべて税込です。診察の結果により処方できない場合があります。
+          </p>
+          <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 40 }}>
             <thead>
               <tr>
-                <th style={TH_STYLE}>薬剤名</th>
                 <th style={TH_STYLE}>用量</th>
-                <th style={{ ...TH_STYLE, textAlign: 'right' }}>価格（税込・定期配送）</th>
+                <th style={TH_STYLE}>プラン</th>
+                <th style={{ ...TH_STYLE, textAlign: 'right' }}>価格（税込）</th>
               </tr>
             </thead>
             <tbody>
+              {[
+                { dose: '10mg', plan: '定期配送',            price: '¥5,000' },
+                { dose: '10mg', plan: '1ヶ月分',             price: '¥5,500' },
+                { dose: '10mg', plan: '3ヶ月まとめ買い定期便', price: '¥13,500' },
+                { dose: '10mg', plan: '6ヶ月まとめ買い定期便', price: '¥24,000' },
+                { dose: '20mg', plan: '定期配送',            price: '¥7,000' },
+                { dose: '20mg', plan: '1ヶ月分',             price: '¥7,500' },
+                { dose: '20mg', plan: '3ヶ月まとめ買い定期便', price: '¥19,500' },
+                { dose: '20mg', plan: '6ヶ月まとめ買い定期便', price: '¥36,000' },
+              ].map(({ dose, plan, price }, i) => (
+                <tr key={i}>
+                  <td style={TD_STYLE}>{dose}</td>
+                  <td style={TD_STYLE}>{plan}</td>
+                  <td style={{ ...TD_STYLE, textAlign: 'right' }}>{price}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <h3
+            style={{
+              fontFamily: 'var(--font-serif)',
+              fontSize: 16,
+              fontWeight: 400,
+              color: '#1A3A4A',
+              marginBottom: 16,
+            }}
+          >
+            共通費用
+          </h3>
+          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+            <thead>
               <tr>
-                <td style={TD_STYLE}>イソトレチノイン</td>
-                <td style={TD_STYLE}>10mg</td>
-                <td style={{ ...TD_STYLE, textAlign: 'right' }}>¥5,000</td>
+                <th style={TH_STYLE}>項目</th>
+                <th style={{ ...TH_STYLE, textAlign: 'right' }}>金額</th>
               </tr>
-              <tr>
-                <td style={TD_STYLE}>イソトレチノイン</td>
-                <td style={TD_STYLE}>20mg</td>
-                <td style={{ ...TD_STYLE, textAlign: 'right' }}>¥7,000</td>
-              </tr>
+            </thead>
+            <tbody>
+              {[
+                { label: '診察料',           price: '無料' },
+                { label: '再診料',           price: '無料' },
+                { label: '送料（通常）',      price: '¥500' },
+                { label: '送料（クール便）',  price: '¥1,000' },
+              ].map(({ label, price }) => (
+                <tr key={label}>
+                  <td style={TD_STYLE}>{label}</td>
+                  <td style={{ ...TD_STYLE, textAlign: 'right' }}>{price}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </section>

@@ -293,30 +293,79 @@ export default function MounjaroPage() {
           >
             料金
           </h2>
-          <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 12 }}>
+          <p
+            style={{
+              fontSize: 13,
+              color: '#7A8F9A',
+              marginBottom: 24,
+              paddingLeft: 16,
+              borderLeft: '2px solid #D6EEF7',
+              lineHeight: 1.8,
+            }}
+          >
+            表示価格はすべて税込です。診察の結果により処方できない場合があります。
+          </p>
+          <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 40 }}>
             <thead>
               <tr>
-                <th style={TH_STYLE}>薬剤名</th>
                 <th style={TH_STYLE}>用量</th>
-                <th style={{ ...TH_STYLE, textAlign: 'right' }}>価格（税込・定期配送）</th>
+                <th style={TH_STYLE}>プラン</th>
+                <th style={{ ...TH_STYLE, textAlign: 'right' }}>価格（税込）</th>
               </tr>
             </thead>
             <tbody>
+              {[
+                { dose: '2.5mg', plan: '定期配送',            price: '¥16,000' },
+                { dose: '2.5mg', plan: '1ヶ月分',             price: '¥18,000' },
+                { dose: '2.5mg', plan: '3ヶ月まとめ買い定期便', price: '¥45,000' },
+                { dose: '2.5mg', plan: '6ヶ月まとめ買い定期便', price: '¥84,000' },
+                { dose: '5mg',   plan: '定期配送',            price: '¥28,000' },
+                { dose: '5mg',   plan: '1ヶ月分',             price: '¥30,000' },
+                { dose: '5mg',   plan: '3ヶ月まとめ買い定期便', price: '¥78,000' },
+                { dose: '5mg',   plan: '6ヶ月まとめ買い定期便', price: '¥144,000' },
+                { dose: '7.5mg', plan: '定期配送',            price: '¥39,000' },
+                { dose: '7.5mg', plan: '1ヶ月分',             price: '¥41,000' },
+                { dose: '7.5mg', plan: '3ヶ月まとめ買い定期便', price: '¥111,000' },
+                { dose: '7.5mg', plan: '6ヶ月まとめ買い定期便', price: '¥210,000' },
+              ].map(({ dose, plan, price }, i) => (
+                <tr key={i}>
+                  <td style={TD_STYLE}>{dose}</td>
+                  <td style={TD_STYLE}>{plan}</td>
+                  <td style={{ ...TD_STYLE, textAlign: 'right' }}>{price}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <h3
+            style={{
+              fontFamily: 'var(--font-serif)',
+              fontSize: 16,
+              fontWeight: 400,
+              color: '#1A3A4A',
+              marginBottom: 16,
+            }}
+          >
+            共通費用
+          </h3>
+          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+            <thead>
               <tr>
-                <td style={TD_STYLE}>マンジャロ</td>
-                <td style={TD_STYLE}>2.5mg</td>
-                <td style={{ ...TD_STYLE, textAlign: 'right' }}>¥16,000（¥4,000/本）</td>
+                <th style={TH_STYLE}>項目</th>
+                <th style={{ ...TH_STYLE, textAlign: 'right' }}>金額</th>
               </tr>
-              <tr>
-                <td style={TD_STYLE}>マンジャロ</td>
-                <td style={TD_STYLE}>5mg</td>
-                <td style={{ ...TD_STYLE, textAlign: 'right' }}>¥28,000（¥7,000/本）</td>
-              </tr>
-              <tr>
-                <td style={TD_STYLE}>マンジャロ</td>
-                <td style={TD_STYLE}>7.5mg</td>
-                <td style={{ ...TD_STYLE, textAlign: 'right' }}>¥39,000（¥9,750/本）</td>
-              </tr>
+            </thead>
+            <tbody>
+              {[
+                { label: '診察料',           price: '無料' },
+                { label: '再診料',           price: '無料' },
+                { label: '送料（通常）',      price: '¥500' },
+                { label: '送料（クール便）',  price: '¥1,000' },
+              ].map(({ label, price }) => (
+                <tr key={label}>
+                  <td style={TD_STYLE}>{label}</td>
+                  <td style={{ ...TD_STYLE, textAlign: 'right' }}>{price}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </section>
