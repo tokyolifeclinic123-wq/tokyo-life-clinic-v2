@@ -39,10 +39,8 @@ export const metadata: Metadata = {
     images: [{ url: '/og-default.png', width: 1200, height: 630 }],
   },
   icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/logo.png', type: 'image/png' },
-    ],
+    icon: '/logo.png',
+    shortcut: '/logo.png',
     apple: '/logo.png',
   },
 }
@@ -56,6 +54,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <link rel="icon" href="/logo.png" type="image/png" />
+      </head>
       <body
         className={`${notoSansJP.variable} ${notoSerifJP.variable} ${cormorantGaramond.variable} antialiased`}
       >
