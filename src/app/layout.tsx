@@ -38,14 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630 }],
   },
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
-      { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
-    ],
-    shortcut: '/favicon.ico',
-    apple: '/logo.png',
-  },
+
 }
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
