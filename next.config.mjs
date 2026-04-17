@@ -10,6 +10,12 @@ const nextConfig = {
           { key: 'Referrer-Policy',         value: 'strict-origin-when-cross-origin' },
         ],
       },
+      {
+        source: '/favicon.ico',
+        headers: [
+          { key: 'Cache-Control', value: 'no-cache' },
+        ],
+      },
     ]
   },
   images: {
