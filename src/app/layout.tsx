@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: `%s | ${CLINIC.name}`,
   },
   description: `${CLINIC.name} - 24時間受付のオンライン診療`,
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? 'https://tokyo-life-clinic.com'),
+  metadataBase: new URL('https://tokyo-life-online-clinic.com'),
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630 }],
   },
@@ -57,9 +57,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <head>
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-      </head>
       <body
         className={`${notoSansJP.variable} ${notoSerifJP.variable} ${cormorantGaramond.variable} antialiased`}
       >
