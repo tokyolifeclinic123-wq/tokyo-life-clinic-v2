@@ -40,7 +40,7 @@ export function Footer() {
               }}
             >
               <Image
-                src="/logo-transparent.png"
+                src="/logo.png"
                 alt="東京LIFEオンラインクリニック"
                 width={200}
                 height={55}
