@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async rewrites() {
+    return [
+      { source: '/lp/:slug', destination: '/lp/:slug/index.html' },
+      { source: '/lp/:slug/', destination: '/lp/:slug/index.html' },
+    ]
+  },
   async headers() {
     return [
       {
