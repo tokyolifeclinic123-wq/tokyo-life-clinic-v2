@@ -6,11 +6,6 @@ import Link from 'next/link'
 import { LineButton } from '@/components/ui/LineButton'
 
 const MENU_LINKS = [
-  { href: '/menu/isotretinoin', label: '美肌内服薬' },
-  { href: '/menu/mounjaro',     label: 'メディカルダイエット' },
-]
-
-const SP_MENU_LINKS = [
   { href: 'https://www.tokyo-life-online-clinic.com/lp/002_01', label: 'イソトレチノイン' },
   { href: 'https://www.tokyo-life-online-clinic.com/lp/001_01', label: 'メディカルダイエット' },
 ]
@@ -109,9 +104,11 @@ export function Header() {
                 }}
               >
                 {MENU_LINKS.map(({ href, label }) => (
-                  <Link
+                  <a
                     key={href}
                     href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{
                       display: 'block',
                       padding: '14px 20px',
@@ -125,7 +122,7 @@ export function Header() {
                     onClick={() => setDropOpen(false)}
                   >
                     {label}
-                  </Link>
+                  </a>
                 ))}
               </div>
             </div>
@@ -215,7 +212,7 @@ export function Header() {
             </button>
             {spMenuOpen && (
               <div style={{ paddingLeft: 16, marginTop: 12, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                {SP_MENU_LINKS.map(({ href, label }) => (
+                {MENU_LINKS.map(({ href, label }) => (
                   <a
                     key={href}
                     href={href}
