@@ -10,6 +10,11 @@ const MENU_LINKS = [
   { href: '/menu/mounjaro',     label: 'メディカルダイエット' },
 ]
 
+const SP_MENU_LINKS = [
+  { href: 'https://www.tokyo-life-online-clinic.com/lp/002_01', label: 'イソトレチノイン' },
+  { href: 'https://www.tokyo-life-online-clinic.com/lp/001_01', label: 'メディカルダイエット' },
+]
+
 const NAV_LINKS = [
   { href: '/price',   label: '料金表' },
   { href: '/column',  label: 'コラム' },
@@ -210,15 +215,17 @@ export function Header() {
             </button>
             {spMenuOpen && (
               <div style={{ paddingLeft: 16, marginTop: 12, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                {MENU_LINKS.map(({ href, label }) => (
-                  <Link
+                {SP_MENU_LINKS.map(({ href, label }) => (
+                  <a
                     key={href}
                     href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => { setMenuOpen(false); setSpMenuOpen(false) }}
                     style={{ fontSize: 14, color: '#5BC8E8', textDecoration: 'none' }}
                   >
                     {label}
-                  </Link>
+                  </a>
                 ))}
               </div>
             )}
