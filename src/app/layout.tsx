@@ -5,6 +5,7 @@ import './globals.css'
 import { CLINIC } from '@/lib/constants'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { FloatingLineBanner } from '@/components/ui/FloatingLineBanner'
 
 const notoSansJP = Noto_Sans_JP({
   weight: ['300', '400', '500', '700'],
@@ -68,6 +69,7 @@ export default function RootLayout({
         <Header />
         <main style={{ paddingTop: 70 }}>{children}</main>
         <Footer />
+        <FloatingLineBanner />
 
         {/* GTM script — afterInteractive で非同期ロード */}
         {GTM_ID && (
