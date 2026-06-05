@@ -21,35 +21,28 @@ export function FloatingLineBanner() {
   }
 
   return (
-    <>
-      <style>{`
-        @media (min-width: 769px) {
-          .floating-line-banner { display: none; }
-        }
-      `}</style>
-      <a
-        className="floating-line-banner"
-        href={CLINIC.lineUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={handleClick}
-        style={{
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          zIndex: 9999,
-          display: 'block',
-        }}
-      >
-        <Image
-          src="/cta-line.webp"
-          alt="LINEで診療予約"
-          width={390}
-          height={80}
-          style={{ width: '100%', height: 'auto', display: 'block' }}
-        />
-      </a>
-    </>
+    <a
+      className="md:hidden"
+      href={CLINIC.lineUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={handleClick}
+      style={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        zIndex: 9999,
+        display: 'block',
+      }}
+    >
+      <Image
+        src="/cta-line.webp"
+        alt="LINEで診療予約"
+        width={390}
+        height={80}
+        style={{ width: '100%', height: 'auto', display: 'block' }}
+      />
+    </a>
   )
 }
