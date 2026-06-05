@@ -4,11 +4,14 @@ import { CLINIC } from '@/lib/constants'
 
 export function FloatingLineBanner() {
   const handleClick = () => {
-    if (typeof window !== 'undefined' && (window as any).dataLayer) {
-      (window as any).dataLayer.push({
-        event: 'click_line_cta',
-        location: 'floating_banner',
-      })
+    if (typeof window !== 'undefined') {
+      const w = window as Window & { dataLayer?: object[] }
+      if (w.dataLayer) {
+        w.dataLayer.push({
+          event: 'click_line_cta',
+          location: 'floating_banner',
+        })
+      }
     }
   }
 
