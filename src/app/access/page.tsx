@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { CLINIC } from '@/lib/constants'
 import { LineButton } from '@/components/ui/LineButton'
+import { InteriorSlider } from '@/components/ui/InteriorSlider'
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd'
 
 export const dynamic = 'force-static'
@@ -163,6 +164,8 @@ export default function AccessPage() {
         {/* CTA */}
         <LineButton location="access_page" label="LINEで予約する" />
       </div>
+
+      <InteriorSlider />
 
       <style>{`
         @media (max-width: 768px) {

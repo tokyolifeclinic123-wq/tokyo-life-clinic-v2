@@ -4,6 +4,7 @@ import { WhySection }            from '@/components/top/WhySection'
 import { FlowSection }           from '@/components/top/FlowSection'
 import { CtaSection }            from '@/components/top/CtaSection'
 import { MedicalBusinessJsonLd } from '@/components/seo/JsonLd'
+import { InteriorSlider }        from '@/components/ui/InteriorSlider'
 
 export const dynamic = 'force-static'
 
@@ -15,6 +16,7 @@ export default function Home() {
       <MenuSection />
       <WhySection />
       <FlowSection />
+      <InteriorSlider />
       <CtaSection />
     </>
   )
