@@ -1,7 +1,7 @@
 import { getColumns } from '@/lib/microcms'
 import { ColumnList } from '@/components/column/ColumnList'
 import type { Metadata } from 'next'
-import type { Column } from '@/types/microcms'
+import type { Column, ColumnCategory } from '@/types/microcms'
 
 export const revalidate = 3600
 
@@ -20,7 +20,7 @@ export default async function ColumnPage() {
     posts = []
   }
 
-  const categories = ['美肌内服薬', 'メディカルダイエット', 'オンライン診療']
+  const categories: ColumnCategory[] = ['美肌内服薬', 'メディカルダイエット', 'オンライン診療']
 
   return (
     <main style={{ padding: '120px 40px 80px', maxWidth: 1200, margin: '0 auto' }}>
