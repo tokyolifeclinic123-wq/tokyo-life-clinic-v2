@@ -1,96 +1,35 @@
-import type { Metadata } from 'next'
 import { getColumns } from '@/lib/microcms'
-import { ColumnList } from '@/components/column/ColumnList'
-import { BreadcrumbJsonLd } from '@/components/seo/JsonLd'
-import { CLINIC } from '@/lib/constants'
-import type { Column, ColumnCategory } from '@/types/microcms'
+import Link from 'next/link'
 
 export const revalidate = 0
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: 'コラム',
-    description:
-      '東京LIFEオンラインクリニックの医療コラム。美肌内服薬・メディカルダイエットに関する情報をお届けします。',
-  }
-}
-
-const CATEGORIES: ColumnCategory[] = ['美肌内服薬', 'メディカルダイエット', 'オンライン診療']
-
 export default async function ColumnPage() {
-  let posts: Column[] = []
-
+  let posts: any[] = []
   try {
-    const res = await getColumns(9)
+    const res = await getColumns(9, 0)
     posts = res.contents
-  } catch {
-    // microCMS 未設定時はフォールバック
+  } catch (e) {
+    console.error(e)
   }
 
   return (
-    <>
-      <BreadcrumbJsonLd
-        items={[
-          { name: 'ホーム', url: CLINIC.siteUrl },
-          { name: 'コラム', url: `${CLINIC.siteUrl}/column` },
-        ]}
-      />
-
-      <div style={{ padding: '100px 80px', backgroundColor: '#ffffff' }} className="page-pad">
-
-        {/* Page title */}
-        <div style={{ marginBottom: 64 }}>
-          <p
-            style={{
-              fontFamily: 'var(--font-cormorant)',
-              fontSize: 13,
-              fontWeight: 300,
-              color: '#7A8F9A',
-              letterSpacing: '0.18em',
-              textTransform: 'uppercase',
-              marginBottom: 10,
-            }}
-          >
-            Column
-          </p>
-          <h1
-            style={{
-              fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(24px, 3vw, 42px)',
-              fontWeight: 400,
-              color: '#1A3A4A',
-            }}
-          >
-            コラム
-          </h1>
+    <main style={{ padding: '120px 40px 80px', maxWidth: 1200, margin: '0 auto' }}>
+      <h1 style={{ fontSize: 32, marginBottom: 40 }}>コラム</h1>
+      {posts.length === 0 ? (
+        <p>記事がありません（取得件数: {posts.length}）</p>
+      ) : (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+          {posts.map((post) => (
+            <Link key={post.id} href={`/column/${post.slug}`}>
+              <div style={{ border: '1px solid #ccc', padding: 16, borderRadius: 8 }}>
+                <p style={{ fontSize: 12, color: '#888' }}>{post.category}</p>
+                <h2 style={{ fontSize: 18, marginTop: 8 }}>{post.title}</h2>
+                <p style={{ fontSize: 14, marginTop: 8 }}>{post.meta_description}</p>
+              </div>
+            </Link>
+          ))}
         </div>
-
-        {/* Content */}
-        {posts.length === 0 ? (
-          <div
-            style={{
-              padding: '120px 0',
-              textAlign: 'center',
-              color: '#7A8F9A',
-              fontSize: 14,
-              lineHeight: 2,
-            }}
-          >
-            <p style={{ marginBottom: 8, fontSize: 16, color: '#1A3A4A' }}>
-              コラムはまもなく公開予定です
-            </p>
-            <p>最新情報はLINEでお知らせします。</p>
-          </div>
-        ) : (
-          <ColumnList posts={posts} categories={CATEGORIES} />
-        )}
-      </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          .page-pad { padding: 60px 24px !important; }
-        }
-      `}</style>
-    </>
+      )}
+    </main>
   )
 }
