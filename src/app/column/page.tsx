@@ -1,6 +1,7 @@
 import { getColumns } from '@/lib/microcms'
 import { ColumnList } from '@/components/column/ColumnList'
 import type { Metadata } from 'next'
+import type { Column } from '@/types/microcms'
 
 export const revalidate = 3600
 
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 }
 
 export default async function ColumnPage() {
-  let posts = []
+  let posts: Column[] = []
   try {
     const res = await getColumns(9, 0)
     posts = res.contents
