@@ -1,10 +1,11 @@
 import { getColumns } from '@/lib/microcms'
 import Link from 'next/link'
+import type { Column } from '@/types/microcms'
 
 export const revalidate = 0
 
 export default async function ColumnPage() {
-  let posts: any[] = []
+  let posts: Column[] = []
   try {
     const res = await getColumns(9, 0)
     posts = res.contents
