@@ -26,10 +26,11 @@ export function ColumnList({ posts, categories }: ColumnListProps) {
       <div
         style={{
           display: 'flex',
-          gap: 0,
-          borderBottom: '1px solid #D6EEF7',
+          gap: 8,
           marginBottom: 48,
-          flexWrap: 'wrap',
+          overflowX: 'auto',
+          whiteSpace: 'nowrap',
+          paddingBottom: 4,
         }}
       >
         {tabs.map((tab) => (
@@ -39,15 +40,15 @@ export function ColumnList({ posts, categories }: ColumnListProps) {
             style={{
               padding: '10px 24px',
               fontSize: 13,
-              fontWeight: active === tab ? 500 : 400,
-              color: active === tab ? '#1A3A4A' : '#7A8F9A',
-              backgroundColor: 'transparent',
-              border: 'none',
-              borderBottom: active === tab ? '2px solid #5BC8E8' : '2px solid transparent',
+              fontWeight: 500,
+              color: active === tab ? '#fff' : '#1A3A4A',
+              backgroundColor: active === tab ? '#1A3A4A' : '#fff',
+              border: active === tab ? 'none' : '1px solid #1A3A4A',
+              borderRadius: 24,
               cursor: 'pointer',
               letterSpacing: '0.04em',
-              transition: 'color 0.2s, border-color 0.2s',
-              marginBottom: -1,
+              transition: 'background 0.2s, color 0.2s',
+              flexShrink: 0,
             }}
           >
             {tab}
