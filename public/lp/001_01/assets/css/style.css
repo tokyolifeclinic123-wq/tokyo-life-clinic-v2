@@ -111,6 +111,11 @@ body {
     opacity: 0.7;
 }
 
+/* セクション07：背景画像の下部余白が狭いため、注釈テキストに重ならない位置へ */
+#section-07 .cta-btn {
+    bottom: 14px;
+}
+
 .cta-btn__img {
     display: block;
     width: 100%;
