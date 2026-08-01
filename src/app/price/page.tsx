@@ -48,7 +48,9 @@ type DoseRow = { dose: string; prices: [number, number, number, number, number] 
 type FlatRow = { prices: [number, number, number, number, number] }
 
 const MOUNJARO_ROWS: DoseRow[] = [
+  { dose: 'お試し 2.5mg', prices: [2980, 0, 0, 0, 0] },
   { dose: '2.5mg',  prices: [16000, 18000, 45000,  84000,  151200] },
+  { dose: 'お試し 5.0mg', prices: [5980, 0, 0, 0, 0] },
   { dose: '5mg',    prices: [28000, 30000, 78000,  144000, 264000] },
   { dose: '7.5mg',  prices: [39000, 41000, 111000, 210000, 384000] },
   { dose: '10mg',   prices: [52500, 55000, 150000, 285000, 528000] },
