@@ -47,10 +47,13 @@ const PLANS: Plan[] = ['定期配送', '1ヶ月分', '3ヶ月まとめ買い定�
 type DoseRow = { dose: string; prices: [number, number, number, number, number] }
 type FlatRow = { prices: [number, number, number, number, number] }
 
+const TRIAL_ROWS = [
+  { dose: 'お試しマンジャロ 2.5mg', unit: '1本', price: 2980 },
+  { dose: 'お試しマンジャロ 5.0mg', unit: '1本', price: 5980 },
+]
+
 const MOUNJARO_ROWS: DoseRow[] = [
-  { dose: 'お試し 2.5mg', prices: [2980, 0, 0, 0, 0] },
   { dose: '2.5mg',  prices: [16000, 18000, 45000,  84000,  151200] },
-  { dose: 'お試し 5.0mg', prices: [5980, 0, 0, 0, 0] },
   { dose: '5mg',    prices: [28000, 30000, 78000,  144000, 264000] },
   { dose: '7.5mg',  prices: [39000, 41000, 111000, 210000, 384000] },
   { dose: '10mg',   prices: [52500, 55000, 150000, 285000, 528000] },
@@ -266,8 +269,20 @@ export default function PricePage() {
           <h2 style={SECTION_H2}>メディカルダイエット</h2>
 
           <DrugBlock title="マンジャロ">
-            <DoseTable rows={MOUNJARO_ROWS} />
-          </DrugBlock>
+  {/* お試し行 */}
+  <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 8 }}>
+    <tbody>
+      {TRIAL_ROWS.map((r) => (
+        <tr key={r.dose} style={{ background: '#FFF8E1' }}>
+          <td style={TD_STYLE}>{r.dose}</td>
+          <td style={TD_STYLE}>{r.unit}</td>
+          <td style={{ ...TD_STYLE, textAlign: 'right' }}>{yen(r.price)}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  <DoseTable rows={MOUNJARO_ROWS} />
+</DrugBlock>
 
           <DrugBlock title="リベルサス">
             <DoseTable rows={RYBELSUS_ROWS} />
